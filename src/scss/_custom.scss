@@ -1,0 +1,68 @@
+body{
+    font-family: sans-serif;
+    margin: 10px;
+    color: #222;
+    background-color: #eee;
+}
+
+.header--main{
+    @extend .clearfix;
+
+    .dd-logo{
+        float: right;
+        width: 400px;
+        height: 100%;
+        display: block;
+        cursor: pointer;
+
+        .st0,
+        .st1{
+            transition: all 0.25s;
+        }
+
+        &:hover{
+            .st0,
+            .st1{
+                fill: #666;
+
+            }
+        }
+    }
+
+    .hl--main{
+        float: left;
+    }
+}
+
+.main--main{
+    .arrow-down-circular .arrow{
+        transform: translateZ(0);
+        animation-name: arrow-anim;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+    }
+
+    .list--styled{
+        li::after{
+            @extend .arrow-right;
+            @extend .arrow-right-dims;
+            @extend .svg-sprite;
+            display: inline-block;
+            content: '';
+        }
+
+        li:nth-of-type(2n)::after{
+            @extend .arrow-right-white;
+            @extend .arrow-right-white-dims;
+        }
+
+    }
+
+}
+
+
+.footer--main{
+    color: $color-brand;
+}
+

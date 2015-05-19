@@ -1,0 +1,92 @@
+'use strict';
+
+module.exports = {
+
+    dirs: {
+        src: {
+            root:   'src',
+            html:   'html',
+            scss:   'scss',
+            js:     'js',
+            vendor: 'vendor',
+            svg:    'svg',
+            ss:     'spritesheet'
+        },
+
+        dist: {
+            root:   'webroot',
+            css:    'styles',
+            js:     'scripts',
+            vendor: 'vendor',
+            img:    'images',
+            ss:     'spritesheet'
+        },
+
+        tmp: {
+            root:               '.tmp',
+            scss:               'scss',
+            svgns:              'svg_with_ns',
+            svgnsnoinlinestyle: 'svg_with_ns_no_inlinestyles_or_attributes',
+            svgspritesheet:     'svg_spritesheet',
+            sprites:            'sprites'
+        }
+    },
+
+    names: {
+        js:         'main',
+        css:        'main',
+        html:       'index',
+        svgssuni:   'spritesheet-universal',
+        svgssview:  'spritesheet-view'
+    },
+
+    ext: {
+        release: {
+            js:     '.min.js',
+            css:    '.min.css',
+            htm:    '.htm'
+        },
+
+        debug: {
+            js:     '.js',
+            css:    '.css',
+            htm:    '-dbg.htm'
+        }
+    },
+
+
+    svgsprite: {
+        svg: {
+            xmlDeclaration      : true,  // Add XML declaration to SVG sprite
+            doctypeDeclaration  : false, // Don't add DOCTYPE declaration to SVG sprite
+            namespaceIDs        : false, // Don't add namespace token to all IDs in SVG shapes
+            dimensionAttributes : true   // Add width and height attributes to the SVG
+        },
+        transform: [{
+            svgo: {
+                plugins: [
+                    {removeViewBox              : false},
+                    {removeUselessStrokeAndFill : false},
+                    {cleanupIDs                 : false},
+                    {convertShapeToPath         : false}
+                ]
+            }
+        }],
+        mode: {
+            view: {     // Activate the «view» mode
+                render: {
+                    scss:{
+                        dest: ''
+                    }
+                },
+                common      : 'svg-sprite',
+                prefix      : '.', // use '%%%s' if u do only want to output %-placeholders and not actual classes
+                bust        : false // Deactivate the cachebuster
+            }
+        }
+    },
+
+    watch:{
+
+    }
+};

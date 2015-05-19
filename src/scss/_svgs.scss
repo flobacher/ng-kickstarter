@@ -1,0 +1,7 @@
+svg.icon{
+    fill: currentColor; // the icon will have its fill set to the current color of the sourrouning html-element
+}
+
+.nosvg-sprite {
+    background: url(#{$imgPath}/#{$spritesheetPath}/#{$spritesheetName}.png) no-repeat;
+}

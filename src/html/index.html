@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title><%= content.title =%></title>
+    <meta name="description" content="<%= content.desc =%>"/>
+    <link rel="stylesheet" href="<%=  dirs.css =%>/<%= names.css =%><%=  exts.css =%>" />
+
+</head>
+<body>
+
+    <header class="header--main">
+        <h1 class="hl--main">SVG Sprite Demo</h1>
+    </header>
+
+
+    <main role="main" class="main--main">
+        <svg class="icon" data-src="<%=  dirs.img =%>/<%=  dirs.ss =%>/<%= names.svgss =%>.svg#arrow-down-circular"/>
+
+        <ul class="list--styled">
+            <li>Item 0</li>
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ul>
+    </main>
+
+
+    <script src="<%=  dirs.js=%>/<%= names.js=%><%= exts.js =%>"></script>
+</body>
+</html>
